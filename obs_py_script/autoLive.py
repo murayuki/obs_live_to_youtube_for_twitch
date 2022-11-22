@@ -22,7 +22,6 @@ def script_load(settings):
 	for task in TasksArgs:
 		RunAt(task, cron_job)
 		
-	asyncio.sleep(30)
 	asyncio.run(cron_job())
 # # ------------------------------------------------------------
 
