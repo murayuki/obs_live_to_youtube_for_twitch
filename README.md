@@ -44,7 +44,7 @@
 
 `Twitch Live Status Fail Number`: 目標頻道停止直播, 檢查狀態未直播失敗 X 次 才會結束 直播串流 以及 關閉瀏覽器
 
-![](C:\Users\MuraYuki\AppData\Roaming\marktext\images\2022-11-23-02-14-18-image.png)
+![2022-11-23-02-14-18-image.png](./images/2022-11-23-02-14-18-image.png)
 
 
 
@@ -54,6 +54,6 @@
 
 
 
-![tw.png](C:\Users\MuraYuki\Downloads\tw.png)
+![tw.png](./images/tw.png)
 
 
