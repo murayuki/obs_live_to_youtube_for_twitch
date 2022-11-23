@@ -57,8 +57,15 @@ async def StartBrowser():
     print("{} ({}) start streaming {}".format(getClan("twitch_channel_id"), getClan("twitch_usrname"), getCurrentTime()))
     
     setClan("LiveStatus", True)
+    
+    if not isClanKey("browserProcessYTStudio"):
+        print("Start Browser To YTStudio...")
+        browserProcessYTStudio = subprocess.Popen([getClan("browserPath"), f'--app=https://studio.youtube.com/channel/UC/livestreaming', '--chrome-frame', '--window-size=800,600', '--window-position=0,0'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+        setClan("browserProcessYTStudio", browserProcessYTStudio)
+    
+    await asyncio.sleep(20)
     if not isClanKey("browserProcess"):
-        print("Start Browser...")
+        print("Start Browser To Twitch...")
         browserProcess = subprocess.Popen([getClan("browserPath"), f'--app=https://www.twitch.tv/{getClan("twitch_channel_id")}', '--chrome-frame', '--window-size=800,600', '--window-position=0,0'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         setClan("browserProcess", browserProcess)
 
@@ -88,8 +95,14 @@ async def StopBrowser(ForcedStop):
                 obs.obs_frontend_streaming_stop()
 
             await asyncio.sleep(5)
+            if isClanKey("browserProcessYTStudio"):
+                print("Stop Streaming By YTStudio...")
+                subprocess.Popen("taskkill /F /T /PID %i" % getClan("browserProcessYTStudio").pid , shell=True)
+                removeClan("browserProcessYTStudio")
+
+            await asyncio.sleep(5)
             if isClanKey("browserProcess"):
-                print("Stop Streaming...")
+                print("Stop Streaming By Twitch...")
                 subprocess.Popen("taskkill /F /T /PID %i" % getClan("browserProcess").pid , shell=True)
                 removeClan("browserProcess")
             
