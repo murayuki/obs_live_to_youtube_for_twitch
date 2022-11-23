@@ -1,5 +1,3 @@
-
-
 ## 重要
 
 所有自動執行都須將前置作業設置完成
@@ -22,15 +20,11 @@
 
 ---
 
-
-
 ## OBS 安裝
 
 `Python` 設定 請到 [Download Python | Python.org](https://www.python.org/downloads/) 下載 並安裝
 
 `工具` > `腳本` > `Python 設置` 上方安裝後的 `Python`路徑
-
-
 
 `OBS 安裝路徑`
 
@@ -39,10 +33,5 @@
 將下載後的 [obs_py_script](https://github.com/murayuki/obs_live_to_youtube_for_twitch/tree/main/obs_py_script "obs_py_script") 資料夾內的腳本放到此路徑中
 接下來到 `工具` > `腳本` > `+` > 選擇 `autoLive.py` 並將各設定填寫完成
 
-
 重啟 OBS 即可, 想知道是否有執行可以至
 `工具` > `腳本` > `指令稿紀錄` 查看執行結果
-
-
-
-

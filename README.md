@@ -2,19 +2,23 @@
 
 ###### 檢查 Twitch 頻道是否直播自動執行直播串流以及結束串流
 
-
-
 > Python 需求
 
-- [x] asyncio
+- asyncio
 
-- [x] datetime
+- datetime
 
-- [x] zoneinfo
+- zoneinfo
 
-- [x] requests
+- requests
 
-- [x] subprocess
+- subprocess
+
+
+
+> 安裝教學以及重要事像
+
+- [安裝教學](./install.md)
 
 
 
@@ -46,14 +50,8 @@
 
 ![2022-11-23-02-14-18-image.png](./images/2022-11-23-02-14-18-image.png)
 
-
-
 > Twitch Clinet ID = 用戶端 ID
 
 > Twitch Secret  請點擊 新密碼 即可獲得
 
-
-
 ![tw.png](./images/tw.png)
-
-
