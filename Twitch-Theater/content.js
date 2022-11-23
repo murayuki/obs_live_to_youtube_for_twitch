@@ -2,7 +2,7 @@ const excludeUrl = [,
     /.*:\/\/dashboard\.twitch\.tv.*/,
     /.*:\/\/.*\.twitch\.tv\/settings\/.*/,
 ]
-let loadingFailed = 120
+let loadingFailed = 180
 
 window.addEventListener("load", () => {
     console.log("Plugin loaded ....")
@@ -37,7 +37,7 @@ setInterval(() => {
         console.log("Error Click Button")
         errorBtn.click()
     }, 500)
-}, 5000);
+}, 1000 * 10);
 
 setInterval(() => {
     if (excludeUrl.some(url => window.location.href.match(url)))
@@ -46,23 +46,23 @@ setInterval(() => {
     const loading = document.querySelector('.tw-loading-spinner')
 	
     if (!loading) {
-		if (loadingFailed != 120) {
-			loadingFailed = 120
+		if (loadingFailed != 180) {
+			loadingFailed = 180
 			console.log(`Player Loading Failed | Auto Refresh Second "Reset" ${loadingFailed}`)
 		}
 		return
     }
 	
 	if (loading) {
-        loadingFailed--
-        console.log(`Player Loading Failed | Auto Refresh Second ${loadingFailed}`)
-        
-		if (loadingFailed <= 0) {
+		if (loadingFailed <= 0 && loading) {
 			location.reload()
-			loadingFailed = 120
+			loadingFailed = 180
 		}
+		
+		loadingFailed--
+		console.log(`Player Loading Failed | Auto Refresh Second ${loadingFailed}`)
     }
-}, 1000);
+}, 1000 * 1);
 
 function toggleTheaterMode() {
     setTimeout(() => {
