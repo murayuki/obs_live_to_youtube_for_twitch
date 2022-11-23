@@ -44,22 +44,23 @@ setInterval(() => {
         return
 
     const loading = document.querySelector('.tw-loading-spinner')
+	
     if (!loading) {
-		if (loadingFailed == 120)
-			return
-		
-		loadingFailed = 120
-		console.log(`Player Loading Failed | Auto Refresh Second "Reset" ${loadingFailed}`)
-        return
-    }else {
+		if (loadingFailed != 120) {
+			loadingFailed = 120
+			console.log(`Player Loading Failed | Auto Refresh Second "Reset" ${loadingFailed}`)
+		}
+		return
+    }
+	
+	if (loading) {
         loadingFailed--
         console.log(`Player Loading Failed | Auto Refresh Second ${loadingFailed}`)
         
-		
-		if (loadingFailed >= 1)
-            return
-        location.reload()
-        loadingFailed = 120
+		if (loadingFailed <= 0) {
+			location.reload()
+			loadingFailed = 120
+		}
     }
 }, 1000);
 
