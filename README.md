@@ -1,6 +1,6 @@
 # obs Live To Youtube For Twitch
 
-#### 目前已知 瀏覽器插件 有一個 BUG 會尚未 LOADING 狀態卡 120秒 刷新畫面
+#### 目前已知 瀏覽器插件 有一個 BUG | LOADING 狀態卡 120秒 刷新畫面
 
 ###### 檢查 Twitch 頻道是否直播自動執行直播串流以及結束串流
 
